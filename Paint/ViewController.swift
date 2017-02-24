@@ -18,6 +18,7 @@ class ViewController: NSViewController {
         
         sideBar.layer?.backgroundColor = CGColor(red:0.35, green:0.20, blue:0.24, alpha:1.0)
         // Do any additional setup after loading the view.
+        print("kuk")
     }
 
     override var representedObject: Any? {
