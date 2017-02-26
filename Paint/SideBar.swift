@@ -10,16 +10,14 @@ import Cocoa
 
 class SideBar: NSViewController {
 
-    @IBOutlet weak var sideBar: NSView!
-    @IBOutlet weak var TriangleBtn: NSButton!
-    @IBOutlet weak var SquareBtn: NSButton!
+
+    var dase: NSPoint! = nil
     
-    @IBOutlet weak var StarBtn: NSButton!
-    @IBOutlet weak var CircleBtn: NSButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        sideBar.layer?.backgroundColor = CGColor(red:0.35, green:0.20, blue:0.24, alpha:1.0)
         
+
+
     }
 
     override var representedObject: Any? {
@@ -30,7 +28,8 @@ class SideBar: NSViewController {
     }
 
     @IBAction func TriangleClicked(_ sender: Any) {
-        debugPrint("TriangleClicked")
+        //let mouseLocation = NSEvent.mouseLocation()
+       // let loc = self.view.bounds
     }
     @IBAction func CircleClicked(_ sender: Any) {
         debugPrint("CircleClicked")
@@ -43,5 +42,26 @@ class SideBar: NSViewController {
         debugPrint("StarClicked")
     }
     
+    override func mouseMoved(with event: NSEvent) {
+        //NSPoint(
+
+        
+        //var p = button.convertPoint(buttonCenter, to: self.view)
+        //var p = obj.convertPoint(event.center, toView: self.view)
+       // let clickPoint = [self convertPoint:[event locationInWindow] fromView:nil];
+        //let location:NSPoint = NSPoint.con
+    }
+    
+    override func mouseDragged(with event: NSEvent) {
+        
+        let kuk = self.view.convert(event.locationInWindow, from: nil)
+        
+        debugPrint(kuk)
+        
+    }
+    
+    
+    
+
 }
 

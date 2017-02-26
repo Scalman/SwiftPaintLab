@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -686,61 +687,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v7a-bD-mtv">
-                                <rect key="frame" x="0.0" y="0.0" width="62" height="600"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vn4-zY-QKg" customClass="CustomHoverBtn" customModule="Paint" customModuleProvider="target">
-                                        <rect key="frame" x="7" y="532" width="48" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="tri" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Xmf-1S-zSi">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
+                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="Vmj-0r-Nop">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="600"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" ambiguous="YES" id="hD8-VG-xuS">
+                                    <rect key="frame" x="1" y="1" width="48" height="598"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="okM-ve-XWW" customClass="CustomHoverBtn" customModule="Paint" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="439" width="48" height="48"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="rect" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="FQx-ST-5Vu">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
                                             <connections>
-                                                <action selector="TriangleClicked:" target="XfG-lQ-9wD" id="iAr-iy-Kh3"/>
+                                                <action selector="SquereClicked:" target="XfG-lQ-9wD" id="3zQ-9Q-5KI"/>
                                             </connections>
-                                        </buttonCell>
-                                    </button>
-                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="okM-ve-XWW" customClass="CustomHoverBtn" customModule="Paint" customModuleProvider="target">
-                                        <rect key="frame" x="7" y="441" width="48" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="rect" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="FQx-ST-5Vu">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="SquereClicked:" target="XfG-lQ-9wD" id="3zQ-9Q-5KI"/>
-                                        </connections>
-                                    </button>
-                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nWS-Ea-IjE" customClass="CustomHoverBtn" customModule="Paint" customModuleProvider="target">
-                                        <rect key="frame" x="7" y="394" width="48" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="star" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="51D-h3-EtH">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="StarClicked:" target="XfG-lQ-9wD" id="Xo5-lE-cZZ"/>
-                                        </connections>
-                                    </button>
-                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ubI-HB-T1b" customClass="CustomHoverBtn" customModule="Paint" customModuleProvider="target">
-                                        <rect key="frame" x="7" y="488" width="48" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="cir" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="XsM-Nb-Voy">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="CircleClicked:" target="XfG-lQ-9wD" id="C9f-jE-ceg"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </customView>
+                                        </button>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nWS-Ea-IjE" customClass="CustomHoverBtn" customModule="Paint" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="392" width="48" height="48"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="star" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="51D-h3-EtH">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="StarClicked:" target="XfG-lQ-9wD" id="Xo5-lE-cZZ"/>
+                                            </connections>
+                                        </button>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ubI-HB-T1b" customClass="CustomHoverBtn" customModule="Paint" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="486" width="48" height="45"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="cir" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="XsM-Nb-Voy">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="CircleClicked:" target="XfG-lQ-9wD" id="C9f-jE-ceg"/>
+                                            </connections>
+                                        </button>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vn4-zY-QKg" customClass="CustomHoverBtn" customModule="Paint" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="530" width="48" height="48"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="tri" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Xmf-1S-zSi">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <action selector="TriangleClicked:" target="XfG-lQ-9wD" id="iAr-iy-Kh3"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                    </subviews>
+                                </view>
+                                <color key="borderColor" red="0.68544594049999996" green="0.4413818504" blue="0.59189768009999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="fillColor" red="0.68544594049999996" green="0.4413818504" blue="0.59189768009999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </box>
                         </subviews>
                     </view>
-                    <connections>
-                        <outlet property="sideBar" destination="v7a-bD-mtv" id="t9n-TY-4gJ"/>
-                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

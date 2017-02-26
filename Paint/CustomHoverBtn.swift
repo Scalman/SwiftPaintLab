@@ -10,15 +10,28 @@ import Cocoa
 
 class CustomHoverBtn: NSButton {
 
+
+   
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         
         let trackingArea = NSTrackingArea.init(rect: self.bounds, options: [NSTrackingAreaOptions.mouseEnteredAndExited, NSTrackingAreaOptions.activeAlways], owner: self, userInfo: nil)
         self.addTrackingArea(trackingArea)
+        self.addGestureRecognizer(NSPanGestureRecognizer(target: self, action: #selector(handlePan)))
         
     }
     
+    func handlePan(event: NSEvent){
+
+        debugPrint("Do something")
+    }
     override func mouseEntered(with event: NSEvent) {
         self.addCursorRect(self.bounds, cursor: NSCursor.pointingHand())
     }
+    
+
+
+
+    
+    
 }

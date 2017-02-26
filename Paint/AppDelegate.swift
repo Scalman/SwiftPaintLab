@@ -15,6 +15,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        
+        
+   
+        
+      /*  let viewPoint = NSPoint(x:self.view.bounds.origin.x , y:self.view.bounds.origin.y)
+
+        dase = self.view.convert(viewPoint, from: NSEvent.mouseLocation())
+        
+        debugPrint(dase)<*/
+        
+        //window.acceptsMouseMovedEvents = true
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
